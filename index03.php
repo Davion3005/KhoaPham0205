@@ -9,14 +9,17 @@
 </head>
 <body>
     <div class="banco">
-        <div class="oco trang">1</div>
-        <div class="oco den">2</div>
-        <div class="oco trang">3</div>
-        <div class="oco den">4</div>
         <div class="oco trang"></div>
         <div class="oco den"></div>
         <div class="oco trang"></div>
-        <div class="oco den">8</div>
+        <div class="oco den"></div>
+        <div class="oco trang"></div>
+        <div class="oco den"></div>
+        <div class="oco trang"></div>
+        <div class="oco den"></div>
+        <div class="oco den"></div>
+        <div class="oco trang"></div>
+        
     </div>
 </body>
 </html>
