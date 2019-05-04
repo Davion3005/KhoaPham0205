@@ -9,16 +9,19 @@
 </head>
 <body>
     <div class="banco">
-        <div class="oco trang"></div>
-        <div class="oco den"></div>
-        <div class="oco trang"></div>
-        <div class="oco den"></div>
-        <div class="oco trang"></div>
-        <div class="oco den"></div>
-        <div class="oco trang"></div>
-        <div class="oco den"></div>
-        <div class="oco den"></div>
-        <div class="oco trang"></div>
+        <?php
+            for($y=1; $y<=8; $y++){
+                for($x = 1; $x<=8; $x++){
+                    if(($y+$x)%2==0){
+                        echo '<div class="oco trang"></div>';
+                    }
+                    else{
+                        echo '<div class="oco den"></div>';
+                    }
+                }
+            }
+        ?>
+        
         
     </div>
 </body>
