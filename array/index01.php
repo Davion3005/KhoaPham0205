@@ -24,19 +24,23 @@ $b = array(
 // print_r($subject[1]);
 
 
-$a = [1,2,3,5,88,3,1,4,5,7,4,3];
+$a = [1,2,3,5,88,3,1,4,5,3,5];
+foreach($a as $number) {
+    echo $number.'<br>';
+}
+foreach($a as $index => $number) {
+    echo $index. ' => ' .$number.'<br>';
+}
+echo '-------<br>';
 
-foreach($a as $number) echo $number.'<br>';
-
+// for($i=0; $i < count($a); $i++){
+//     echo $a[$i]."<br>";
+// }
 // // i=0
 // $number = 1;
 // // i = 1;
 // $number = 2;
-
-// for($i=0; $i < 12; $i++){
-//     echo $a[$i]."<br>";
-// }
-
+// echo count($a);
 // echo $a[0];
 // echo $a[1];
 // echo $a[2];
