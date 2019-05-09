@@ -9,6 +9,10 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> -->
 </head>
 <body>
+    <?php
+    // include ('lib/products.php');
+    ?>
+
     <div class="container">
         <div class="product">
             <div class="image">
