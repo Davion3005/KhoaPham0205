@@ -35,6 +35,18 @@ body{
     font-family: 'Pacifico', cursive;
     color: red;
 }
+.product-bottom .name, .price{
+    font-size: 25px;
+    font-weight: 600;
+    padding-left: 15px;
+}
+.price{
+    color: red
+}
+.product-bottom p{
+    line-height: 15px
+}
 .image img{
     width: 150px;
+    padding-top: 12px
 }
