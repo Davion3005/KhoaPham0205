@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bài tập Array</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet"> -->
 </head>
 <body>
     <div class="container">

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
 body{
     background-color: #e0e0e0
 }
@@ -10,6 +11,29 @@ body{
     width: calc((1150px / 3) - 30px);
     float: left;
     margin: 15px;
+}
+.image{
+    width: 40%; 
+    float: left;
+}
+.info{
+    width: 60%;
+    float: left;
+}
+.info .name{
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+.info .name, .info .detail{
+    padding-left: 25px;
+}
+.detail li{
+    list-style-type: none
+}
+.promotion{
+    font-family: 'Pacifico', cursive;
+    color: red;
 }
 .image img{
     width: 150px;
