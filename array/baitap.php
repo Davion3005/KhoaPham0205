@@ -11,6 +11,9 @@
 <body>
     <?php
     include ('lib/products.php');
+    include_once ('lib/products.php');
+    // require ('lib/products.php');
+    require_once ('lib/products.php');
     ?>
 
     <div class="container">
@@ -19,7 +22,7 @@
         ?>
         <div class="product">
             <div class="image">
-                <img src="images/iphone-xs-max-gray-400x460.png">
+                <img src="<?=$link.$product['image']?>">
             </div>
             <div class="info">
                 <div class="name">

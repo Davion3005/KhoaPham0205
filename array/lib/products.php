@@ -47,5 +47,6 @@ $arrProduct = [
         'price'=>'33900000'
     ]
 ];
+define('PI',3.14);
 
 ?>
