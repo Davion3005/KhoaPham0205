@@ -45,7 +45,7 @@ $arrProduct = [
         "name"=>'iPhone Xs Max 64GB',
         'image'=>'190321/iphone-xs-max-gray-400x460.png',
         'price'=>'33900000'
-    ],
+    ]
 ];
 
 ?>

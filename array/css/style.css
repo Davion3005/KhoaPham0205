@@ -9,6 +9,7 @@ body{
 .product{
     background-color: #ffffff;
     width: calc((1150px / 3) - 30px);
+    height: 310px;
     float: left;
     margin: 15px;
 }

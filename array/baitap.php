@@ -10,16 +10,21 @@
 </head>
 <body>
     <?php
-    // include ('lib/products.php');
+    include ('lib/products.php');
     ?>
 
     <div class="container">
+        <?php 
+        foreach($arrProduct as $product){
+        ?>
         <div class="product">
             <div class="image">
                 <img src="images/iphone-xs-max-gray-400x460.png">
             </div>
             <div class="info">
-                <div class="name">Iphone XS Max</div>
+                <div class="name">
+                <?php echo $product['name']?>
+                </div>
                 <ul class="detail">
                     <li>Giảm ngay 1 triệu (đã trừ vào giá)</li>
                     <li>Giảm ngay 1 triệu (đã trừ vào giá)</li>
@@ -29,105 +34,18 @@
                 </ul>
             </div>
             <div class="product-bottom">
-                <p class="name">Iphone XS Max</p>
-                <p class="price">35000000 VND</p>
+                <p class="name">
+                <?= $product['name']?>
+                </p>
+                <p class="price">
+                    <?=number_format(
+                        $product['price'],0, ',', '.'
+                    )?>
+                    VND
+                </p>
             </div>
         </div>
-        <div class="product">
-            <div class="image">
-                <img src="images/iphone-xs-max-gray-400x460.png">
-            </div>
-            <div class="info">
-                <div class="name">Iphone XS Max</div>
-                <ul class="detail">
-                    <li>Giảm ngay 1 triệu (đã trừ vào giá)</li>
-                    <li>Giảm ngay 1 triệu (đã trừ vào giá)</li>
-                    <li class="promotion">Khuyến mãi: </li>
-                    <li>Đổi máy cũ lên đời iPhone </li>
-                    <li>Đổi máy cũ lên đời iPhone </li>
-                </ul>
-            </div>
-            <div class="product-bottom">
-                <p class="name">Iphone XS Max</p>
-                <p class="price">35000000 VND</p>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="images/iphone-xs-max-gray-400x460.png">
-            </div>
-            <div class="info">
-                <div class="name">Iphone XS Max</div>
-                <ul class="detail">
-                    <li>Giảm ngay 1 triệu (đã trừ vào giá)</li>
-                    <li>Giảm ngay 1 triệu (đã trừ vào giá)</li>
-                    <li class="promotion">Khuyến mãi: </li>
-                    <li>Đổi máy cũ lên đời iPhone </li>
-                    <li>Đổi máy cũ lên đời iPhone </li>
-                </ul>
-            </div>
-            <div class="product-bottom">
-                <p class="name">Iphone XS Max</p>
-                <p class="price">35000000 VND</p>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="images/iphone-xs-max-gray-400x460.png">
-            </div>
-            <div class="info">
-                <div class="name">Iphone XS Max</div>
-                <ul class="detail">
-                    <li>Giảm ngay 1 triệu (đã trừ vào giá)</li>
-                    <li>Giảm ngay 1 triệu (đã trừ vào giá)</li>
-                    <li class="promotion">Khuyến mãi: </li>
-                    <li>Đổi máy cũ lên đời iPhone </li>
-                    <li>Đổi máy cũ lên đời iPhone </li>
-                </ul>
-            </div>
-            <div class="product-bottom">
-                <p class="name">Iphone XS Max</p>
-                <p class="price">35000000 VND</p>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="images/iphone-xs-max-gray-400x460.png">
-            </div>
-            <div class="info">
-                <div class="name">Iphone XS Max</div>
-                <ul class="detail">
-                    <li>Giảm ngay 1 triệu (đã trừ vào giá)</li>
-                    <li>Giảm ngay 1 triệu (đã trừ vào giá)</li>
-                    <li class="promotion">Khuyến mãi: </li>
-                    <li>Đổi máy cũ lên đời iPhone </li>
-                    <li>Đổi máy cũ lên đời iPhone </li>
-                </ul>
-            </div>
-            <div class="product-bottom">
-                <p class="name">Iphone XS Max</p>
-                <p class="price">35000000 VND</p>
-            </div>
-        </div>
-        <div class="product">
-            <div class="image">
-                <img src="images/iphone-xs-max-gray-400x460.png">
-            </div>
-            <div class="info">
-                <div class="name">Iphone XS Max</div>
-                <ul class="detail">
-                    <li>Giảm ngay 1 triệu (đã trừ vào giá)</li>
-                    <li>Giảm ngay 1 triệu (đã trừ vào giá)</li>
-                    <li class="promotion">Khuyến mãi: </li>
-                    <li>Đổi máy cũ lên đời iPhone </li>
-                    <li>Đổi máy cũ lên đời iPhone </li>
-                </ul>
-            </div>
-            <div class="product-bottom">
-                <p class="name">Iphone XS Max</p>
-                <p class="price">35000000 VND</p>
-            </div>
-        </div>
+        <?php }?>
     </div>
 </body>
 </html>
