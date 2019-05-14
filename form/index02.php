@@ -34,32 +34,36 @@ if(isset($_GET['btnSubmit'])){
     elseif($pt=='*') $kq = $a*$b;
     elseif($pt=='/' & $b!=0) $kq = $a/$b;
     else $kq = 'Error!';
-    echo $kq;
+    // echo $kq;
 }
 
 // if(true) echo 'Dung';
 // else echo 'Sai';
 
-//  dieukien ? giatri_cho_DK_dung : giatri_cho_DK_sai;
+// dieukien ? giatri_cho_DK_dung : giatri_cho_DK_sai;
 // echo true ? 'Dung' : 'Sai';
 
 ?>
 <body>
     <form method="GET">
-        <input type="text" placeholder="Enter a" name="a">
+        <input type="text" placeholder="Enter a" 
+        name="a"
+        value="<?=isset($_GET['a']) ? $_GET['a'] : ''?>"
+        >
         <br>
         <select name="pheptinh">
             <option value="+">+</option>
             <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
+            <option value="*" selected>*</option>
+            <option value="/" >/</option>
         </select>
         <br>
-        <input type="text" placeholder="Enter b" name="b">
+        <input type="text" placeholder="Enter b" name="b"
+        value="<?=isset($_GET['b']) ? $_GET['b'] : null ?>">
         <br>
         <button type="submit" name="btnSubmit">=</button>
         <br>
-        <input type="text" value="<?php if(isset($kq)) echo $kq;?>"  placeholder="KQ" >
+        <input value="<?=isset($kq) ? $kq : null;?>"  placeholder="KQ" disabled type="text">
     </form>
 </body>
 </html>
