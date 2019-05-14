@@ -20,6 +20,7 @@ button{
 </style>
 <?php
 // print_r($_GET);
+// $kq = '';
 if(isset($_GET['btnSubmit'])){
     $a = $_GET['a'];
     $pt = $_GET['pheptinh'];
@@ -35,6 +36,12 @@ if(isset($_GET['btnSubmit'])){
     else $kq = 'Error!';
     echo $kq;
 }
+
+// if(true) echo 'Dung';
+// else echo 'Sai';
+
+//  dieukien ? giatri_cho_DK_dung : giatri_cho_DK_sai;
+// echo true ? 'Dung' : 'Sai';
 
 ?>
 <body>
@@ -52,7 +59,7 @@ if(isset($_GET['btnSubmit'])){
         <br>
         <button type="submit" name="btnSubmit">=</button>
         <br>
-        <input type="text" placeholder="KQ">
+        <input type="text" value="<?php if(isset($kq)) echo $kq;?>"  placeholder="KQ" >
     </form>
 </body>
 </html>
