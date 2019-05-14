@@ -52,10 +52,30 @@ if(isset($_GET['btnSubmit'])){
         >
         <br>
         <select name="pheptinh">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*" selected>*</option>
-            <option value="/" >/</option>
+            <option value="+"
+            <?php
+            echo isset($_GET['pheptinh']) &&
+            $_GET['pheptinh']=='+' ? 'selected' : '';
+            ?>
+            >+</option>
+            <option value="-"
+            <?php
+            echo isset($_GET['pheptinh']) &&
+            $_GET['pheptinh']=='-' ? 'selected' : '';
+            ?>
+            >-</option>
+            <option value="*"
+            <?php
+            echo isset($_GET['pheptinh']) &&
+            $_GET['pheptinh']=='*' ? 'selected' : '';
+            ?>
+            >*</option>
+            <option value="/" 
+            <?php
+            echo isset($_GET['pheptinh']) &&
+            $_GET['pheptinh']=='/' ? 'selected' : '';
+            ?>
+            >/</option>
         </select>
         <br>
         <input type="text" placeholder="Enter b" name="b"
