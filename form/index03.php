@@ -20,8 +20,9 @@ button{
 </style>
 <body>
     <form method="GET">
-        <input type="text" placeholder="Enter a" 
+        <input type="text" placeholder="Enter a" class="txtSoa"
         name="a">
+        <div class="message_txtSoa"></div>
         <br>
         <select name="pheptinh">
             <option value="+">+</option>
@@ -32,9 +33,29 @@ button{
         <br>
         <input type="text" placeholder="Enter b" name="b">
         <br>
-        <button type="submit" name="btnSubmit">=</button>
+        <button type="button" name="btnSubmit">=</button>
         <br>
         <input placeholder="KQ" disabled type="text">
     </form>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        // $ = jQuery
+        $(document).ready(function(){
+            jQuery('.txtSoa').keyup(function(){
+                var a = jQuery('.txtSoa').val()// get value
+                if(isNaN(a)){
+                    $('.message_txtSoa').html('Error number a!');
+                }
+                else $('.message_txtSoa').html('')
+
+                $('button').click(function(){
+                    // alert(a)
+                    jQuery('.txtSoa').val(5) // set value
+                })
+            })
+           
+        })
+        
+    </script>
 </body>
 </html>
