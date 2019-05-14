@@ -21,6 +21,12 @@ button{
 <?php
 // print_r($_GET);
 // $kq = '';
+$arrPT = [
+    '+'=>'Cộng', 
+    '-'=>"Trừ", 
+    '*'=>'Nhân', 
+    '/'=>"Chia"
+];
 if(isset($_GET['btnSubmit'])){
     $a = $_GET['a'];
     $pt = $_GET['pheptinh'];
@@ -52,30 +58,16 @@ if(isset($_GET['btnSubmit'])){
         >
         <br>
         <select name="pheptinh">
-            <option value="+"
+            <?php foreach($arrPT as $key => $pt):?>
+            <option value="<?=$key?>"
             <?php
             echo isset($_GET['pheptinh']) &&
-            $_GET['pheptinh']=='+' ? 'selected' : '';
+                $_GET['pheptinh'] == $key 
+                ? 'selected' 
+                : '';
             ?>
-            >+</option>
-            <option value="-"
-            <?php
-            echo isset($_GET['pheptinh']) &&
-            $_GET['pheptinh']=='-' ? 'selected' : '';
-            ?>
-            >-</option>
-            <option value="*"
-            <?php
-            echo isset($_GET['pheptinh']) &&
-            $_GET['pheptinh']=='*' ? 'selected' : '';
-            ?>
-            >*</option>
-            <option value="/" 
-            <?php
-            echo isset($_GET['pheptinh']) &&
-            $_GET['pheptinh']=='/' ? 'selected' : '';
-            ?>
-            >/</option>
+            ><?=$pt?></option>
+            <?php endforeach?>
         </select>
         <br>
         <input type="text" placeholder="Enter b" name="b"
