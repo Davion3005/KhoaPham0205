@@ -66,17 +66,37 @@ button{
                 }
             })
             $('button').click(function(){
-                var a = jQuery('.txtSoa').val()
-                var b = jQuery('.txtSob').val()
+                var a = jQuery('.txtSoa').val();
+                var b = jQuery('.txtSob').val();
+                var pt = $('select').val();
                 if(a==''){
-                    jQuery('.txtSoa').focus()
-                    return;
+                    jQuery('.txtSoa').focus();
+                    return
                 }
                 else if(b==''){
                     jQuery('.txtSob').focus()
                     return;
                 }
-                else $('.txtKQ').val(a+b)
+                else {
+                    if(pt=='+')
+                        $('.txtKQ').val(parseFloat(a)+parseFloat(b))
+                    else if(pt=='-')
+                        $('.txtKQ').val(parseFloat(a)-parseFloat(b))
+                    else if(pt=='*')
+                        $('.txtKQ').val(parseFloat(a)*parseFloat(b))
+                    else if(pt=='/' && b!=0){
+                        var kq = parseFloat(a)/parseFloat(b)
+                        $('.txtKQ').val(kq)
+                    }
+                    else if(pt=='/' && b==0){
+                        Query('.txtSob').focus()
+                        return;
+                    }
+                    else{
+                        $('.txtKQ').val('Error!');
+                        return;
+                    }
+                }
             })
            
         })
