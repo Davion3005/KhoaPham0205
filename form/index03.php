@@ -22,7 +22,7 @@ button{
     <form method="GET">
         <input type="text" placeholder="Enter a" class="txtSoa"
         name="a">
-        <div class="message_txtSoa"></div>
+        <span class="message_txtSoa"></span>
         <br>
         <select name="pheptinh">
             <option value="+">+</option>
@@ -31,11 +31,13 @@ button{
             <option value="/">/</option>
         </select>
         <br>
-        <input type="text" placeholder="Enter b" name="b">
+        <input type="text" placeholder="Enter b" class="txtSob"
+        name="b">
+        <span class="message_txtSob"></span>
         <br>
         <button type="button" name="btnSubmit">=</button>
         <br>
-        <input placeholder="KQ" disabled type="text">
+        <input placeholder="KQ" disabled type="text" class="txtKQ">
     </form>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script>
@@ -45,13 +47,36 @@ button{
                 var a = jQuery('.txtSoa').val()// get value
                 if(isNaN(a)){
                     $('.message_txtSoa').html('Error number a!');
+                    $('button').attr('disabled','disabled')
                 }
-                else $('.message_txtSoa').html('')
-
-                $('button').click(function(){
-                    // alert(a)
-                    jQuery('.txtSoa').val(5) // set value
-                })
+                else {
+                    $('.message_txtSoa').html('')
+                    $('button').removeAttr('disabled')
+                }
+            })
+            jQuery('.txtSob').keyup(function(){
+                var b = jQuery('.txtSob').val()// get value
+                if(isNaN(b)){
+                    $('.message_txtSob').html('Error number b!');
+                    $('button').attr('disabled','disabled')
+                }
+                else{
+                    $('.message_txtSob').html('')
+                    $('button').removeAttr('disabled')
+                }
+            })
+            $('button').click(function(){
+                var a = jQuery('.txtSoa').val()
+                var b = jQuery('.txtSob').val()
+                if(a==''){
+                    jQuery('.txtSoa').focus()
+                    return;
+                }
+                else if(b==''){
+                    jQuery('.txtSob').focus()
+                    return;
+                }
+                else $('.txtKQ').val(a+b)
             })
            
         })
