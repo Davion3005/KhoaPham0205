@@ -7,8 +7,13 @@
     <title>Login</title>
 </head>
 <?php
-print_r($_POST['txtEmail']);
-
+if(isset($_POST['txtSubmit'])){
+    // print_r($_POST['txtEmail']);
+    // login success 
+    // admin@gmail.com 
+    // 111111
+    header('location: http://localhost/php0205/form/session/get-session.php');
+}
 ?>
 <body>
     <form method="post">
@@ -16,7 +21,7 @@ print_r($_POST['txtEmail']);
         <br>
         <input type="password" name="txtPassword" placeholder="Enter password">
         <br>
-        <button type="submit">Login</button>
+        <button name="txtSubmit" type="submit">Login</button>
 
     </form>
 </body>
