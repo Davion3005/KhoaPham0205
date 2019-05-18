@@ -21,6 +21,13 @@ if(isset($_POST['txtSubmit'])){
                     <label class="control-label">Email</label>
                     <input type="text" name="txtEmail" placeholder="Enter email" class="form-control">
                 </div>
+                <div class="form-group">
+                    <label class="control-label">Pasword</label>
+                    <input type="passwod" name="txtPassword" placeholder="Enter password" class="form-control">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary">Login</button>
+                </div>
             </form>
         </div>
     </div>
