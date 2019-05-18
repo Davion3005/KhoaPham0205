@@ -21,6 +21,6 @@ if(!isset($_SESSION['user']) || $_SESSION['user'] !== md5(md5(121313))) {
 </head>
 <body>
     <p>Hello, Admin</p>
-    <p>Logout</p>
+    <p><a href="logout.php">Logout</a></p>
 </body>
 </html>
