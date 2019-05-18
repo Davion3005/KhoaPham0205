@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,16 +8,17 @@
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
-<?php
-if(isset($_POST['txtSubmit'])){
-   //responsive css 
-}
-?>
 <body>
     <div class="row justify-content-center">
         <div class="col-sm-4 col-md-6 col-lg-6 col-6">
             <h2 class="text-center">Login</h2>
-            <form method="post">
+            <?php
+            if(isset($_SESSION['error'])){
+                echo $_SESSION['error'];
+                unset($_SESSION['error']);
+            }
+            ?>
+            <form method="post" action="xulylogin.php">
                 <div class="form-group">
                     <label>Email</label>
                     <input type="text" name="txtEmail" placeholder="Enter email" class="form-control">
