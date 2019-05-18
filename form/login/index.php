@@ -9,21 +9,21 @@
 </head>
 <?php
 if(isset($_POST['txtSubmit'])){
-    
+   //responsive css 
 }
 ?>
 <body>
     <div class="row justify-content-center">
-        <div class="col-4">
+        <div class="col-sm-4 col-md-6 col-lg-6 col-6">
             <h2 class="text-center">Login</h2>
             <form method="post">
                 <div class="form-group">
-                    <label class="control-label">Email</label>
+                    <label>Email</label>
                     <input type="text" name="txtEmail" placeholder="Enter email" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label class="control-label">Pasword</label>
-                    <input type="passwod" name="txtPassword" placeholder="Enter password" class="form-control">
+                    <label>Pasword</label>
+                    <input type="password" name="txtPassword" placeholder="Enter password" class="form-control">
                 </div>
                 <div class="form-group">
                     <button class="btn btn-primary">Login</button>
