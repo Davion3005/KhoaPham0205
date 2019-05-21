@@ -12,11 +12,18 @@ if($email == null || $password == null){
 if($email=='admin@gmail.com' && $password=='111111'){
     $userId = 121313; // get from db
     $_SESSION['user'] = md5(md5($userId));
+    if(isset($_POST['rememberme']) && $_POST['rememberme']==1){
+        date_default_timezone_set('Asia/Ho_Chi_Minh');
+        setcookie('user', $_SESSION['user'], time() + 120);
+    }
     header('location: home.php');
 }
 else{
     $_SESSION['error'] = "Login fail!";
     header('location: index.php');
 }
+
+
+
 
 ?>

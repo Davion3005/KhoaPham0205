@@ -28,7 +28,8 @@
                     <input type="password" name="txtPassword" placeholder="Enter password" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label><input type="checkbox" name="rememberme"> Remember me?</label>
+                    <label>
+                        <input value="1" type="checkbox" name="rememberme"> Remember me?</label>
                     
                 </div>
                 <div class="form-group">
