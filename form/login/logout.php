@@ -8,6 +8,7 @@ if(!isset($_SESSION['user']) || $_SESSION['user'] !== md5(md5(121313))) {
     header('Location: index.php');
     return false;
 }
-session_destroy();
+session_destroy(); // delete session
+setcookie('user', null, 0); // delete cookie
 header('Location: index.php');
 ?>

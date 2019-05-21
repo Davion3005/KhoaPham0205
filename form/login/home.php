@@ -4,9 +4,17 @@ session_start();
 // get token from SESSION to get userID 
 // request to db get user info
 if(!isset($_SESSION['user']) || $_SESSION['user'] !== md5(md5(121313))) {
-    $_SESSION['error'] = "Please login!";
-    header('Location: index.php');
-    return false;
+    if(!isset($_COOKIE['user']) || $_COOKIE['user'] !== md5(md5(121313))){
+        $_SESSION['error'] = "Please login!";
+        header('Location: index.php');
+        return false;
+    }
+    else{
+        //C1: 
+        // $_SESSION['user'] = $_COOKIE['user'];
+        //C2: add time cookie
+        setcookie('user', $_COOKIE['user'], time() + 120);
+    }
 }
 
 ?>
