@@ -21,12 +21,15 @@ function checkSNT(int $number): bool{
 
 function inSNT(int $min=0, int $max = 100){
     $kq = [];
-    for($i=$min; $i<=$max; $i++){
-        if(checkSNT($i))
-            //array_push($kq, $i);
-            $kq[] = $i;
+    for( ; ; ){
+        if($min<=$max){
+            if(checkSNT($min)){
+                $kq[] = $min;
+            }
+        }
+        $min++;
+        if($min==$max) return $kq;
     }
-    return $kq;
 }
 $data = inSNT();
 print_r($data);
