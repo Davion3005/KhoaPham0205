@@ -14,7 +14,22 @@ function checkSNT(int $number): bool{
     }
     return true;
 }
+
 // $c = checkSNT(9);
 // var_dump($c);
+
+
+function inSNT(int $min=0, int $max = 100){
+    $kq = [];
+    for($i=$min; $i<=$max; $i++){
+        if(checkSNT($i))
+            //array_push($kq, $i);
+            $kq[] = $i;
+    }
+    return $kq;
+}
+$data = inSNT();
+print_r($data);
+
 
 ?>
