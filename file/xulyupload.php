@@ -1,4 +1,5 @@
 <?php
+require_once '../function/index05.php';
 $avatar = $_FILES['avatar']; // return array
 // print_r($avatar);
 /**
@@ -14,9 +15,13 @@ $arrMimeType = [
     'image/jpeg'
 ];
 if(in_array($avatar['type'], $arrMimeType)){
-
     if( $avatar['size'] <= 100*1024 ){ //100kb
-        move_uploaded_file($avatar['tmp_name'],'avatar-user/'.$avatar['name']);
+
+        $newName = randomString(10).'-'.time().'-'.$avatar['name'];
+        move_uploaded_file(
+            $avatar['tmp_name'],
+            'avatar-user/'.$newName
+        );
         echo 'uploaded';
     }
     else{

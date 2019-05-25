@@ -23,7 +23,7 @@ function randomString(int $length = 40){
     }
     return $str;
 }
-echo randomString(30);
+// echo randomString(30);
 //x3bdi9dvkqyb8hdjsnjvvzwzfxwyw92omdkkw6nk
 //1vtnq08vv7xvhp9gzakbtvsdcyvc0xilupg5kzq4
 //z86op608zga0n5lpa8bjg898lajwwn
