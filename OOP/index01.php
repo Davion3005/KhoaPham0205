@@ -14,6 +14,9 @@ class Product{
         string $desc = '',
         string $image= ''
     ){
+        echo '<pre>';
+        echo __FUNCTION__. ' duoc khoi tao';
+        echo '<br>';
         $this->id = $id;
         $this->name = $name;
         $this->price = $price;
@@ -29,18 +32,25 @@ class Product{
         return $this->name;
     }
 
+    function __destruct(){
+        echo __FUNCTION__. ' da bi huy';
+        // unset($id);
+        // $id = null;
+    }
+
 }
 
-// $product = new Product(1, 'iPhone', 20, 'Mo ta', 'a.png'); // obj
-$product = new Product;
-$product->__construct(1, 'iPhone', 20, 'Mo ta', 'a.png');
+$product = new Product(1, 'iPhone', 20, 'Mo ta', 'a.png'); // obj
+// $product = new Product;
+// $product->__construct(1, 'iPhone', 20, 'Mo ta', 'a.png');
 
 // $product->name = 'Macbook';
 // $product->setName('Samsung');
 // echo $product->getName();
 print_r($product);
-
-
+$product->setName('Samsung');
+echo $product->getName();
+print_r($product);
 
 // $product02 = [
 //     'name'=>'Mac',
