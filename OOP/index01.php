@@ -1,13 +1,19 @@
 <?php
 class Product{
     //property
-    protected $id;
+    protected $id = 1;
     protected $name = 'iPhone';
     protected $price;
     protected $desc;
     protected $image;
-
-    function __construct(int $id, string $name, float $price, string $desc, string $image){
+    
+    function __construct(
+        int $id = 1,
+        string $name = 'A',
+        float $price= 0,
+        string $desc = '',
+        string $image= ''
+    ){
         $this->id = $id;
         $this->name = $name;
         $this->price = $price;
@@ -25,13 +31,14 @@ class Product{
 
 }
 
-$product = new Product; // obj
-// $product->__construct();
+// $product = new Product(1, 'iPhone', 20, 'Mo ta', 'a.png'); // obj
+$product = new Product;
+$product->__construct(1, 'iPhone', 20, 'Mo ta', 'a.png');
 
 // $product->name = 'Macbook';
 // $product->setName('Samsung');
 // echo $product->getName();
-// print_r($product);
+print_r($product);
 
 
 
