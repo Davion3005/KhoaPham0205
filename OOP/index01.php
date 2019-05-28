@@ -7,9 +7,12 @@ class Product{
     protected $desc;
     protected $image;
 
-    function __construct()
-    {
-        echo __CLASS__ . __FUNCTION__ . ' duoc goi';
+    function __construct(int $id, string $name, float $price, string $desc, string $image){
+        $this->id = $id;
+        $this->name = $name;
+        $this->price = $price;
+        $this->desc = $desc;
+        $this->image = $image;
     }
 
     // function 
