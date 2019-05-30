@@ -7,24 +7,39 @@
  */
 
 class Person{
-    private $name;
+    public static $name = 'Noname';
     private $age;
 
-    function __construct(string $name, int $age){
-        $this->name = $name;
-        $this->age = $age;   
-    }
+    // function __construct(string $name='Noname', int $age=0){
+    //     $this::$name = $name;
+    //     $this->age = $age;   
+    // }
     static function compare(Person $person1, Person $person2){
         if($person1->age > $person2->age)
-            echo $person1->name.' lớn hơn '. $person2->name;
+            echo $person2::$name.' lớn hơn '. $person1::$name;
         elseif($person1->age == $person2->age)
-            echo $person1->name.' bằng tuổi với '. $person2->name;
-        else echo $person1->name.' bé hơn '. $person2->name;
+            echo $person2::$name.' bằng tuổi với '. $person1::$name;
+        else echo $person2::$name.' bé hơn '. $person1::$name;
     }
 }
-$boy = new Person('Nam', 20);
-$girl = new Person('Nữ', 20);
-Person::compare($girl, $boy);
+
+$p = new Person();
+$p::$name = 'Nam';
+echo $p::$name; //  Nam
+
+$p2 = new Person();
+echo $p2::$name; // Noname
+
+
+$p3 = new Person();
+$p3::$name = 'Nữ';
+echo $p3::$name; //  Nữ
+
+
+// $girl = new Person('Nữ', 21);
+// $boy = new Person('Nam', 20);
+
+// Person::compare($girl, $boy);
 
 
 ?>
