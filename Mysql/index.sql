@@ -42,3 +42,36 @@ CREATE TABLE `php0205`.`product_type` (
     `status` TINYINT NOT NULL DEFAULT '0' COMMENT '0_hide, 1_show' , 
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
+
+
+-- 1-1
+-- 1-n 
+-- n-n
+
+-- products n <-> 1 product_type
+
+ALTER TABLE `products` 
+ADD CONSTRAINT `FK_PRODUCTS_VS_TYPE` 
+    FOREIGN KEY (`type_id`) 
+    REFERENCES `product_type`(`id`) 
+    ON DELETE RESTRICT 
+    ON UPDATE RESTRICT;
+
+
+INSERT INTO product_type (`name`, `desc`, `status`)
+VALUES ('Oppo', 'Mô tả cho loại sản phẩm Oppo', 1);
+
+INSERT INTO products(type_id,name,price,promt_price)
+VALUES (2, 'Samsung XX', 1000000, 9900000),
+        (2, 'Samsung XY', 3000000, 0);
+
+
+UPDATE products 
+SET status = 1,
+    price=10500000
+WHERE id=5
+
+DELETE FROM products 
+WHERE id=6
+
+
