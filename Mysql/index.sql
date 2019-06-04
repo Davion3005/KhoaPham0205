@@ -184,3 +184,59 @@ FROM table_name1
     ORDER BY column_name ASC | DESC
     LIMIT position, quantity
 ]
+
+
+-- 20
+SELECT p.name, c.name, detail, price
+FROM products AS p, categories AS c
+WHERE id_type = c.id
+
+SELECT p.name AS tensp, c.name AS tenloai, detail, price
+FROM products AS p
+INNER JOIN categories AS c
+ON id_type = c.id
+
+
+-- 21.1
+SELECT c.name AS tenloai, count(p.id) AS tongSP 
+FROM products AS p
+INNER JOIN categories AS c
+ON id_type = c.id
+WHERE c.name = 'phụ kiện'
+OR c.name = 'iMac'
+GROUP BY c.name
+HAVING tongSP >= 10
+ORDER BY tongSP ASC
+
+-- 21.2 3
+SELECT c.name AS tenloai, avg(p.price) AS DGTB,
+ min(p.price) AS DGMIN,  max(p.price) AS DGMAX
+FROM products AS p
+INNER JOIN categories AS c
+ON id_type = c.id
+GROUP BY c.name
+
+-- 21.6
+
+SELECT c.name AS tenloai, avg(p.price) AS DGTB
+FROM products AS p
+INNER JOIN categories AS c
+ON id_type = c.id
+WHERE c.name = 'Macbook Pro Retina'
+-- GROUP BY c.name
+
+-- 4
+SELECT c.name AS tenloai, sum(p.price) AS tongtien,
+count(p.id) AS tongSP
+FROM products AS p
+INNER JOIN categories AS c
+ON id_type = c.id
+WHERE price BETWEEN 50000000 AND 100000000
+GROUP BY c.name
+
+-- 5
+SELECT b.id AS SOHD, date_order, total, sum(quantity) as tongsoluong
+FROM bills b
+INNER JOIN bill_detail d
+ON b.id = d.id_bill
+GROUP BY b.id
