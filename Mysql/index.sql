@@ -75,3 +75,73 @@ DELETE FROM products
 WHERE id=6
 
 
+SELECT column_name
+FROM table_name
+[ 
+    WHERE dieu_kien 
+    GROUP BY column_name 
+    HAVING dieu_kien_group
+    ORDER BY column_name ASC | DESC
+    LIMIT position, quantity
+]
+
+-- 1. 
+SELECT *
+FROM products
+--  2.
+SELECT name, price, image 
+FROM products
+ORDER BY price ASC, name DESC
+
+-- 5
+SELECT name, detail, price 
+FROM products 
+WHERE name LIKE '%iphone%';
+
+SELECT name, detail, price 
+FROM products 
+WHERE name LIKE 'iphone%';  -- '%iphone'
+
+-- 6
+SELECT *
+FROM products 
+WHERE name LIKE '%macbook%'
+AND price > 25000000;
+
+-- 7
+SELECT *
+FROM products 
+WHERE price >= 500000
+AND price <= 1000000
+
+SELECT *
+FROM products 
+WHERE price BETWEEN 500000 AND 1000000
+
+
+-- 9
+SELECT *
+FROM products 
+WHERE name = 'iPhone X 256GB'
+OR name = 'iPhone 8 Plus 256GB'
+OR name = 'iPhone 7 Plus 32GB';
+
+SELECT *
+FROM products 
+WHERE name IN (
+    'iPhone X 256GB', 
+    'iPhone 8 Plus 256GB', 
+    'iPhone 7 Plus 32GB'
+);
+
+-- 10
+
+SELECT name, detail, price 
+FROM products 
+ORDER BY price DESC 
+LIMIT 0,10; -- page=1
+
+SELECT name, detail, price 
+FROM products 
+ORDER BY price DESC 
+LIMIT 10,10; -- page=2

@@ -39,7 +39,7 @@ CREATE TABLE `bills` (
   `token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `token_date` datetime DEFAULT NULL,
   `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0: chưa xác nhận, 1: đã xác nhận, 2:đã hoàn tất'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;s
 
 -- --------------------------------------------------------
 
