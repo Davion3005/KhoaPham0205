@@ -145,3 +145,42 @@ SELECT name, detail, price
 FROM products 
 ORDER BY price DESC 
 LIMIT 10,10; -- page=2
+
+-- 13
+SELECT * FROM `categories` ORDER BY name ASC
+
+-- 14
+SELECT name, price, image 
+FROM products
+ORDER BY price DESC, name ASC
+
+-- 19
+SELECT avg(price) AS DGTB
+FROM products
+
+SELECT sum(price)/count(id) AS DGTB
+FROM products
+
+
+
+SELECT column_name
+FROM table_name1, table_name2
+[ 
+    WHERE dieu_kien_lien_ket (PK = FK)
+    AND dieu_kien_loc
+    GROUP BY column_name 
+    HAVING dieu_kien_group
+    ORDER BY column_name ASC | DESC
+    LIMIT position, quantity
+]
+
+SELECT column_name
+FROM table_name1
+[ 
+    INNER JOIN table_name2 ON dieu_kien_lien_ket (PK = FK)
+    WHERE dieu_kien_loc
+    GROUP BY column_name 
+    HAVING dieu_kien_group
+    ORDER BY column_name ASC | DESC
+    LIMIT position, quantity
+]
