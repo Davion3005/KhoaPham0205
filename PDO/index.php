@@ -46,8 +46,12 @@ $stmt = $connection->prepare($sql);
 $result = $stmt->execute();
 if($result){
     // get data
-    $users = $stmt->fetchAll(); // fetch()
-    print_r($users);
+    $users = $stmt->fetchAll(PDO::FETCH_OBJ); // fetch()
+    // print_r($users); die;
+    foreach($users as $user){
+        // echo "<h3>".$user['email']."</h3>"; // array
+        echo "<h3>$user->email</h3>";// obj
+    }
 }
 else{
     die('Error query!');
