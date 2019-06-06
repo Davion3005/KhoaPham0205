@@ -33,13 +33,23 @@ catch(PDOException $e){
 // $stmt = $connection->prepare($sql);
 // $result = $stmt->execute([$user,$user_pass,$fullname,$email]);
 
-$user = 'admin0104';
-$fullname = "Nguyễn Văn A"; // Nguyễn Văn A
+// $user = 'admin0104';
+// $fullname = "Nguyễn Văn A"; // Nguyễn Văn A
 
-$sql = "UPDATE users SET fullname = ?
-        WHERE username = ? ";
+// $sql = "UPDATE users SET fullname = ?
+//         WHERE username = ? ";
+// $stmt = $connection->prepare($sql);
+// $result = $stmt->execute([$fullname, $user]);
+
+$sql = "SELECT * FROM users WHERE id<=10";
 $stmt = $connection->prepare($sql);
-$result = $stmt->execute([$fullname, $user]);
-
-var_dump($result);
+$result = $stmt->execute();
+if($result){
+    // get data
+    $users = $stmt->fetchAll(); // fetch()
+    print_r($users);
+}
+else{
+    die('Error query!');
+}
 ?>
