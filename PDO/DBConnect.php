@@ -47,9 +47,14 @@ class DBConnect{
 
     /**
       * Use for Select 1 row
+      * @return array(object) || boolean(false)
       */
-    function getOneRow(){
-        
+    function getOneRow(string $sql, array $options = []){
+        $check = $this->executeQuery($sql, $options);
+        if($check){
+            return $this->statement->fetch(PDO::FETCH_OBJ);
+        }
+        return false;
     }
 
 }
