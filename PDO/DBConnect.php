@@ -56,8 +56,6 @@ class DBConnect{
         }
         return false;
     }
-
 }
-
 
 ?>
