@@ -46,10 +46,10 @@ $stmt = $connection->prepare($sql);
 $result = $stmt->execute();
 if($result){
     // get data
-    // $users = $stmt->fetchAll(PDO::FETCH_OBJ); // fetch()
+    $users = $stmt->fetchAll(PDO::FETCH_OBJ); // fetch()
     // $users = $stmt->fetchColumn(1); // fetch()
-    $users = $stmt->fetchObject(); // fetch
-    print_r($users); die;
+    // $users = $stmt->fetchObject(); // fetch
+    // print_r($users); die;
     // foreach($users as $user){
     //     // echo "<h3>".$user['email']."</h3>"; // array
     //     echo "<h3>$user->email</h3>";// obj
